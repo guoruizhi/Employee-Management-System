@@ -8,8 +8,6 @@ import PropTypes from "prop-types";
 
 const rows = [
     { id: 'avatar', numeric: false, label: 'Avatar' },
-    { id: 'edit', numeric: false, label: '' },
-    { id: 'delete', numeric: false, label: '' },
     { id: 'name', numeric: false, disablePadding: true, label: 'Name' },
     { id: 'title', numeric: false, disablePadding: false, label: 'Title' },
     { id: 'sex', numeric: false, disablePadding: false, label: 'Gender' },
@@ -17,7 +15,8 @@ const rows = [
     { id: 'email', numeric: false, disablePadding: false, label: 'Email' },
     { id: 'manager', numeric: false, disablePadding: false, label: 'manager' },
     { id: 'dr', numeric: false, disablePadding: false, label: 'DR' },
-
+    { id: 'edit', numeric: false, label: '' },
+    { id: 'delete', numeric: false, label: '' }
 ];
 
 class EnhancedTableHead extends React.Component {
