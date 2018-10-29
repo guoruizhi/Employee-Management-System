@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as actions from '../../actions';
 import connect from 'react-redux/es/connect/connect';
-import Button from '@material-ui/core/Button/Button';
+import { Button, Card, Image } from 'semantic-ui-react';
 import EditIcon from '../Display/UI/EditIcon';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -48,32 +48,27 @@ class Profile extends Component {
           <div className="ui grid massive message">
             <div className="ui container ">
               <div className="ui centered card ">
-                <div className="image">
-                  <img src={avatarUrl} />
-                </div>
-                <div className="content">
-                  <a className="header">{profile.name}</a>
-                  <div className="meta">
-                    <span>
+                <Card key={profile.id}>
+                  <Card.Content>
+                    <Image floated="right" size="mini" src={avatarUrl} />
+                    <Card.Header>{profile.name}</Card.Header>
+                    <Card.Meta>
                       A {profile.gender} {profile.title}
-                    </span>
-                  </div>
-                  <div className="description">{profile.cell}</div>
-                  <div className="description">{profile.email}</div>
-                </div>
-                <div className="extra content">
-                  <a>
-                    <i className="user icon" />
-                    <Link to={linkUrl}>
-                      {profile.direct_reports.length}{' '}
-                      {profile.direct_reports.length < 2 ? 'Direct Report' : 'Direct Reports'}
-                    </Link>
-                  </a>
-                </div>
-                <Button variant="outlined" onClick={() => this.editHandler(profile)}>
-                  <EditIcon />
-                  Edit
-                </Button>
+                    </Card.Meta>
+                    <Card.Description>{profile.cell}</Card.Description>
+                    <Card.Description>{profile.email}</Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <Button
+                      basic
+                      color="red"
+                      style={{ display: 'block', margin: '0 auto' }}
+                      onClick={() => this.editHandler(profile)}
+                    >
+                      Edit
+                    </Button>
+                  </Card.Content>
+                </Card>
               </div>
             </div>
           </div>

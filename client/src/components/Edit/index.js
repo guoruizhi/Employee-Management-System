@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './formCSS.css';
 import Button from '@material-ui/core/Button/Button';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import connect from 'react-redux/es/connect/connect';
 import * as actions from '../../actions';
 import { Dropdown } from 'semantic-ui-react';
-import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const genderOptions = [
@@ -98,28 +100,14 @@ class FormExampleForm extends Component {
 
     return (
       <div>
-        <div className="ui fixed borderless inverted menu">
-          <div className="ui container">
-            <a className="header item">Edit employee</a>
-            <div className="right menu">
-              <div className="ui form">
-                <div className="inline fields">
-                  <div className="field">
-                    <div
-                      className="ui green button"
-                      onClick={() => {
-                        this.props.resetScrollCount();
-                        this.props.history.push(`/employees`);
-                      }}
-                    >
-                      HOME
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="title" color="inherit" noWrap>
+              Edit employee
+            </Typography>
+            <div />
+          </Toolbar>
+        </AppBar>
         <div className="ui grid massive message">
           <div className="ui container">
             <div className="row">
