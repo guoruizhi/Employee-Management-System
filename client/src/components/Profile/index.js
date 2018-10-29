@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import * as actions from '../../actions';
 import connect from 'react-redux/es/connect/connect';
 import { Button, Card, Image } from 'semantic-ui-react';
-import EditIcon from '../Display/UI/EditIcon';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from 'react-router-dom/es/Link';
 
 class Profile extends Component {
   componentDidMount() {
@@ -33,7 +31,6 @@ class Profile extends Component {
           avatarUrl = 'http://localhost:4000/defaultFemale.png';
         }
       }
-      const linkUrl = `/managers/${profile._id}`;
       return (
         <div>
           <AppBar position="static">
